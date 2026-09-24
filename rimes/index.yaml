@@ -1,7 +1,7 @@
 # Xime 输入方案子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-09-12'
+updated_at: '2026-09-24'
 schemas:
 - id: builtin
   name: 默认方案
@@ -19,26 +19,10 @@ schemas:
     date: '2026-08-01'
     changelog: 'feat(t9): 拼音九键方案适配 librime-t9 插件'
     downloadUrl:
-    - url: https://github.com/kingzcheung/rime-wubi/archive/refs/tags/2.1.2.tar.gz
+    - url: https://gh-proxy.org/https://github.com/kingzcheung/rime-wubi/archive/refs/tags/2.1.2.tar.gz
       size: 2.4 MB
       sizeBytes: 2506623
       sha256: 2a95f95e95a906b7fb2a20af752953dd3df73003775303d2e2fc7c641c56bec3
-  - version: 2.0.1
-    date: '2026-06-01'
-    changelog: ''
-    downloadUrl:
-    - url: https://github.com/kingzcheung/rime-wubi/archive/refs/tags/2.0.1.tar.gz
-      sha256: 2124a5168435293ae8cc9008d5322b844698e0fcb4e290397eb700d41ffd7469
-      size: 2.1 MB
-      sizeBytes: 2181001
-  - version: 2.0.0
-    date: '2026-05-14'
-    changelog: ''
-    downloadUrl:
-    - url: https://github.com/kingzcheung/rime-wubi/archive/refs/tags/2.0.0.tar.gz
-      sha256: 92c292339536434920aefe3728fa4666b347337e26e0aa47f0dab0d1cd5c5cc7
-      size: 2.1 MB
-      sizeBytes: 2165924
 - id: cangjie
   name: 倉頡輸入法
   author: rime
@@ -58,7 +42,7 @@ schemas:
     date: '2026-06-04'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/rime/rime-cangjie/archive/refs/heads/master.zip
+    - url: https://gh-proxy.org/https://github.com/rime/rime-cangjie/archive/refs/heads/master.zip
       sha256: ''
       size: ''
 - id: luna_pinyin
@@ -79,7 +63,7 @@ schemas:
     date: '2026-06-06'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/rime/rime-luna-pinyin/archive/refs/heads/master.zip
+    - url: https://gh-proxy.org/https://github.com/rime/rime-luna-pinyin/archive/refs/heads/master.zip
       sha256: ''
       size: ''
 - id: quick
@@ -101,7 +85,7 @@ schemas:
     date: '2026-06-04'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/rime/rime-quick/archive/refs/heads/master.zip
+    - url: https://gh-proxy.org/https://github.com/rime/rime-quick/archive/refs/heads/master.zip
       sha256: ''
       size: ''
 - id: rime-frost
@@ -120,7 +104,7 @@ schemas:
     date: '2026-07-10'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/gaboolic/rime-frost/releases/download/1.0.4/rime-frost-schemas.zip
+    - url: https://gh-proxy.org/https://github.com/gaboolic/rime-frost/releases/download/1.0.4/rime-frost-schemas.zip
       sha256: 4f4998ae83f63d757c0a4ace192f69d48265bddfabe231642b73e3739ed0f2f5
       size: 42 MB
 - id: rime-ice
@@ -141,16 +125,9 @@ schemas:
       vhelp 提示不正确的问题 ⚠️ 为避免和简拼冲突，四个字母以下的单词不再能通过全小写输入其大写版本，请按原样大小写输入。e.g. hk --✗-->
       HK；HK --✓--> HK 📚 中文、英文词库更新 🆕 添加了 full_compiled.zip 作为可下载项目（librime 1.17.0 编译），此产物经过预编译，可大幅度减少初次部署时间 '
     downloadUrl:
-    - url: https://github.com/iDvel/rime-ice/releases/download/2026.06.30/full_compiled.zip
+    - url: https://gh-proxy.org/https://github.com/iDvel/rime-ice/releases/download/2026.06.30/full_compiled.zip
       sha256: ae810e0023f28d3eb45ff98a7c58830dd0b505c2272638a321fa6d5a6f5d5418
       size: 45.2 MB
-  - version: 2026.06.03
-    date: '2026-06-04'
-    changelog: 增改词汇
-    downloadUrl:
-    - url: https://github.com/iDvel/rime-ice/releases/download/2026.06.03/full.zip
-      sha256: ccbc2017b0131f41281a9e86ae0706d71faba85a73b9c05390e17c0b5fed3145
-      size: 17 MB
 - id: rime-wanxiang
   name: 万象拼音标准版
   author: amzxyz
@@ -167,10 +144,10 @@ schemas:
     date: '2026-09-03'
     changelog: '- 全面重构Lua，细化优化多处细节 '
     downloadUrl:
-    - url: https://github.com/amzxyz/rime-wanxiang/releases/download/v17.9.6/rime-wanxiang-base.zip
+    - url: https://gh-proxy.org/https://github.com/amzxyz/rime-wanxiang/releases/download/v17.9.6/rime-wanxiang-base.zip
       sha256: d07be3fb1f7011843b2c316c8476a4ad5ab4f58a5a9a14e0a15157cc29320e93
       size: 33.6 MB
-    - url: https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
+    - url: https://gh-proxy.org/https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
       sha256: ''
       size: 401 MB
       sizeBytes: 123026414
@@ -191,7 +168,7 @@ schemas:
     date: '2026-06-21'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/ximeiorg/rime-stroke/archive/refs/tags/0.1.0.tar.gz
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/rime-stroke/archive/refs/tags/0.1.0.tar.gz
       sha256: 8f4cf584708e22db1c5888c4ed14cf28f90e465939fd4991904c179e76f1baf0
       size: 49.3 KB
       sizeBytes: 50474
@@ -213,7 +190,7 @@ schemas:
     date: '2026-06-04'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/cz-archive/rime-wubi98/archive/refs/tags/1.0.0.tar.gz
+    - url: https://gh-proxy.org/https://github.com/cz-archive/rime-wubi98/archive/refs/tags/1.0.0.tar.gz
       sha256: 7d105524b81373c7fef0cbfd197fa3c236bcb4264b1935c5e384bacb10fece53
       size: 902.9 KB
       sizeBytes: 924526
@@ -234,18 +211,10 @@ schemas:
     date: '2026-09-05'
     changelog: 新增下滑全选、复制、粘贴操作, 展示字根到候选字（需要2.8.0）。
     downloadUrl:
-    - url: https://github.com/aizigao/Xime_wubi_xinshiji/releases/download/v2.3.1/wubixsj-2.3.1.zip
+    - url: https://gh-proxy.org/https://github.com/aizigao/Xime_wubi_xinshiji/releases/download/v2.3.1/wubixsj-2.3.1.zip
       sha256: c25422bcebae575b699f60bc18959503227e74b84a1c6f9c61a9b3d54f9dc5d1
       size: 1.9 MB
       sizeBytes: 1959721
-  - version: 2.2.0
-    date: '2026-09-03'
-    changelog: 初始发布 Xime 兼容的新世纪五笔方案，包含纯五笔、五笔拼音混输与自定义配置。
-    downloadUrl:
-    - url: https://github.com/aizigao/Xime_wubi_xinshiji/releases/download/v2.2.0/wubixsj-2.2.0.zip
-      sha256: 865ddbb9c0c7f7d7a9ace688aedd2a8844e37b8eb63529b5edef5625a7f470d2
-      size: 1.8 MB
-      sizeBytes: 1922913
 - id: xqzm
   name: 风入松郑码方案
   author: 风入松
@@ -264,7 +233,7 @@ schemas:
     date: '2026-07-29'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/hzqim/xqzm/archive/refs/tags/zm-6.4.2.tar.gz
+    - url: https://gh-proxy.org/https://github.com/hzqim/xqzm/archive/refs/tags/zm-6.4.2.tar.gz
       sha256: 5cea73cf5625fd03234e8af97d7224afc8397d8b52ec01e2d1ac377be4fc2b00
       size: 7.6 MB
       sizeBytes: 7988200
@@ -286,6 +255,6 @@ schemas:
     date: '2026-06-08'
     changelog: ''
     downloadUrl:
-    - url: https://github.com/chen32768/zhengma_for_rime/archive/refs/heads/master.zip
+    - url: https://gh-proxy.org/https://github.com/chen32768/zhengma_for_rime/archive/refs/heads/master.zip
       sha256: ''
       size: 899KB

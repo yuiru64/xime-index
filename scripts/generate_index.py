@@ -16,6 +16,8 @@ import os
 import sys
 from datetime import date
 
+from lib import enable_proxy
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC_DIR = os.path.join(ROOT, "src")
 TODAY = date.today().isoformat()
@@ -83,7 +85,10 @@ def collect_entries(subdir, fields, src_subdir=None):
         entry = {}
         for field in fields:
             if field in data and data[field] is not None:
-                entry[field] = data[field]
+                if field == "versions":
+                    entry[field] = enable_proxy(data[field])
+                else:
+                    entry[field] = data[field]
         entries.append(entry)
 
     # type: built-in 优先排在前面，其余按 id 排序

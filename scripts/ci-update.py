@@ -19,6 +19,7 @@ from lib import (
     fill_download_urls, fill_archive, fill_files_checksums,
     recalc_model_size,
     should_skip_version,
+    enable_proxy,
 )
 
 # ─── 源码目录 vs 输出目录 ────────────────────────────────
@@ -106,7 +107,8 @@ def update_source(subdir: str, fields: list, filler):
             continue
 
         print(f"  📄 src/{subdir}/{basename}")
-        filled = filler(data)  # 只补全内存数据，不写回 src/
+        filled = filler({f: enable_proxy(data[f]) if f == "versions"
+                         else data[f] for f in data})  # 只补全内存数据，不写回 src/
         entry = {f: filled[f] for f in fields if f in filled and filled[f] is not None}
         entries.append(entry)
 

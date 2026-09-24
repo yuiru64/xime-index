@@ -5,6 +5,7 @@
 import glob
 import hashlib
 import os
+import re
 import tempfile
 import urllib.request
 
@@ -14,6 +15,36 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_VERSIONS = {"master", "main"}
 USER_AGENT = "Xime-Index-Checksum/1.0"
 
+BASE_GIT_PROXY = "https://gh-proxy.org/"
+
+def enable_proxy(versions):
+    if not isinstance(versions, list): return []
+    
+    new_versions = []
+    for version in versions:
+        if not isinstance(version, dict): continue
+        if "downloadUrl" in version:
+            key = "downloadUrl"
+        elif "files" in version:
+            key = "files"
+        else:
+            continue
+
+        files = version[key]
+        if not isinstance(files, list): continue
+        
+        new_files = []
+        for url_entry in files:
+            if not isinstance(url_entry, dict): continue
+            if "url" not in url_entry: continue
+            if re.match("^https://github.com/.*$", url_entry["url"]):
+                new_url = BASE_GIT_PROXY + url_entry["url"]
+                new_files.append({**url_entry, "url": new_url})
+            else:
+                new_files.append(url_entry.copy())
+        
+        new_versions.append({**version, key: new_files})
+        return new_versions
 
 def human_size(bytes_val: int) -> str:
     if bytes_val < 1024:
