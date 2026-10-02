@@ -1,0 +1,32 @@
+id: com.kingzcheung.xime.plugin.meme_bunny
+name: 恶搞兔表情包
+author: Xime
+description: "恶搞兔表情包（6 个表情图片），这只是一个示例插件，展示了如何在 Xime 中使用脚本插件开发表情包功能。"
+type: remote
+tags:
+- 表情
+- 贴纸
+pluginType: emoji
+icon: "🐰"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  emoji:
+    supportsSearch: true
+    columns: 3
+    itemHeightDp: 110
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 4.0.0
+versions:
+- version: 4.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/meme-bunny-4.0.0.xipk
+    size: 65.0 KB
+    sha256: 85473b8219987fb865b7d7e998143826ebee62c7fd7125fcf36ffaabf1989feb
+    sizeBytes: 66510

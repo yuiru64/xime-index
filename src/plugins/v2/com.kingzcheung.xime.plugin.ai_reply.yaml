@@ -1,0 +1,33 @@
+id: com.kingzcheung.xime.plugin.ai_reply
+name: AI 智能回复
+author: Xime
+description: "根据对方消息生成 3~5 条回复候选，点选上屏。支持任意 OpenAI 兼容的 chat/completions 接口。"
+type: remote
+tags:
+- AI
+- 回复
+- 工具
+pluginType: tool
+icon: "应"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  tool:
+    display: passive
+network:
+  allowCustomHosts: true
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 1.0.0
+versions:
+- version: 1.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-reply-1.0.0.xipk
+    size: 3.4 KB
+    sha256: 4e545421c86b1d9e5ac4f06190d1e29a05fe3279d0639a1d3175529b102728dc
+    sizeBytes: 3469

@@ -1,0 +1,42 @@
+id: com.kingzcheung.xime.plugin.funasr_asr
+name: 阿里百炼 FunAsr
+author: Xime
+description: "阿里百炼 FunAsr 在线语音识别，使用阿里云控制台获取的 API Key，可参考快速入门（https://www.aliyun.com/product/bailian）"
+type: remote
+tags:
+- 语音
+- ASR
+pluginType: speech
+icon: "🎤"
+activation: single
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  speech:
+    inputMode: streaming
+    supportsPartialResults: true
+network:
+  hosts:
+  - dashscope.aliyuncs.com
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 3.1.0
+versions:
+- version: 3.1.0
+  date: '2026-09-29'
+  changelog: 1. 优化语音输入在发送场景下的文本处理
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/funasr-asr-3.1.0.xipk
+    size: 9.6 KB
+    sha256: 4955983d5e1f95e3e573a273f85d47cfeb09a20d3a36d7dcc61cbdbe2c4dc524
+    sizeBytes: 9499
+- version: 3.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/funasr-asr-3.0.0.xipk
+    size: 9.3 KB
+    sha256: a20e4d08dba211026b5236f07fd10d9b708caf118f0846e4905b50dca8cccaac
+    sizeBytes: 9499

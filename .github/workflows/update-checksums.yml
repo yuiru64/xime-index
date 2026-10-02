@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - "src/rimes/*.yaml"
-      - "src/plugins/*.yaml"
+      - "src/plugins/v1/*.yaml"
+      - "src/plugins/v2/*.yaml"
       - "src/models/*.yaml"
+      - "src/layouts/*.yaml"
       - ".github/workflows/update-checksums.yml"
   workflow_dispatch: # 也支持手动触发
 

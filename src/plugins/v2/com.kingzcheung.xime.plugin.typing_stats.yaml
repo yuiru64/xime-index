@@ -1,0 +1,33 @@
+id: com.kingzcheung.xime.plugin.typing_stats
+name: 输入统计
+author: Xime
+description: "统计打字量（今日/累计字数、提交次数）。基于宿主下行事件，无网络访问。"
+type: remote
+tags:
+- 工具
+- 统计
+pluginType: tool
+icon: "统"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  tool:
+    display: passive
+  events:
+  - input_changed
+  - text_committed
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 1.0.0
+versions:
+- version: 1.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/typing-stats-1.0.0.xipk
+    size: 2.5 KB
+    sha256: d0283fa91642e17045c4a314a5539ca059164b0fb984821a2f21145655a6fb06
+    sizeBytes: 2592

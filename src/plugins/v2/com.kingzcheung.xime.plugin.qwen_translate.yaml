@@ -1,0 +1,33 @@
+id: com.kingzcheung.xime.plugin.qwen_translate
+name: 千问翻译
+author: Xime
+description: "qwen-mt 专用翻译：翻译选中文本/输入框内容，结果替换原选区或光标处追加。基于阿里云百炼 qwen-mt 系列翻译模型。"
+type: remote
+tags:
+- AI
+- 翻译
+- 工具
+pluginType: tool
+icon: "译"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  tool:
+    display: direct
+network:
+  allowCustomHosts: true
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 1.0.0
+versions:
+- version: 1.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/qwen-translate-1.0.0.xipk
+    size: 2.6 KB
+    sha256: 7dbf11f14e37414a4b39cee4dcdb73b4aeb6808275df91c50f148b37cecd3797
+    sizeBytes: 2637

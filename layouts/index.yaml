@@ -1,0 +1,104 @@
+# Xime 键盘布局子索引
+# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
+index_version: 1
+updated_at: '2026-10-01'
+layouts:
+- id: flypy
+  name: 小鹤双拼带韵母
+  author: kingzcheung
+  description: 专属于小鹤双拼版本。
+  tags:
+  - 布局
+  - 全键盘
+  repo: https://github.com/cz-archive/flypy
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/cz-archive/flypy@1.0.0/images/0.jpg
+  currentVersion: 1.0.1
+  versions:
+  - version: 1.0.1
+    date: '2026-10-01'
+    changelog: fix bugs。
+    downloadUrl:
+    - url: https://cdn.jsdelivr.net/gh/cz-archive/flypy@1.0.1/xime.custom.yaml
+      size: 11.9 KB
+      sha256: 374436059654282d191cbaef10eeb2a33fc00d8566e268556a6434cb9429a7c4
+      sizeBytes: 12145
+  - version: 1.0.0
+    date: '2026-09-25'
+    changelog: 首个版本。
+    downloadUrl:
+    - url: https://cdn.jsdelivr.net/gh/cz-archive/flypy@1.0.0/xime.custom.yaml
+      size: 10.8 KB
+      sha256: 3c54792cf406de0f08df343e22db8555d793b9028e9369299ed125505edaa298
+      sizeBytes: 11106
+- id: msdouble
+  name: 双拼布局（微软双拼）
+  author: kingzcheung
+  description: 专属于微软双拼版本。
+  tags:
+  - 布局
+  - 全键盘
+  repo: https://github.com/cz-archive/msdouble
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/cz-archive/msdouble@1.0.0/images/0.jpg
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-25'
+    changelog: 首个版本。
+    downloadUrl:
+    - url: https://cdn.jsdelivr.net/gh/cz-archive/msdouble@1.0.0/xime.custom.yaml
+      size: 13.6 KB
+      sha256: 546818990de4e6ed93a4b7f3ea7534141d317b9f89b47d59ddd5d5a54142fb33
+      sizeBytes: 13974
+- id: number_rows
+  name: 数字行
+  author: kingzcheung
+  description: 在标准全键盘上方新增一行数字，中文键盘长按出符号、英文键盘直接上屏。
+  tags:
+  - 布局
+  - 全键盘
+  repo: https://github.com/cz-archive/number_rows
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/cz-archive/number_rows@master/images/number_rows.jpg
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: 首个版本：标准 4 行布局 + 顶部数字行（中英各 5 行）。
+    downloadUrl:
+    - url: https://cdn.jsdelivr.net/gh/cz-archive/number_rows@master/xime.custom.yaml
+      sha256: 88d6e994f193a74ae8be95e134f46cbccbb39d970aed68e6e720dff560b0e271
+      size: 2.5 KB
+- id: wubi_compact
+  name: 五笔86紧凑布局
+  author: kingzcheung
+  description: 五笔86紧凑布局，显示五笔86版本的字根在按键上。
+  tags:
+  - 布局
+  - 全键盘
+  repo: https://github.com/cz-archive/wubi_compact
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/cz-archive/wubi_compact@1.0.1/images/0.jpg
+  currentVersion: 1.0.1
+  versions:
+  - version: 1.0.1
+    date: '2026-09-25'
+    changelog: 首个版本：标准 4 行布局 + 顶部数字行（中英各 5 行）。
+    downloadUrl:
+    - url: https://cdn.jsdelivr.net/gh/cz-archive/wubi_compact@1.0.1/xime.custom.yaml
+      size: 10.4 KB
+      sha256: 30684dc7767d5a654031f3c38dfb7b3973a70140e2fd1012468c59b18dbe10a9
+      sizeBytes: 10685

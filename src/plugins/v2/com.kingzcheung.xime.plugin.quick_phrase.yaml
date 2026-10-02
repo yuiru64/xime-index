@@ -1,0 +1,32 @@
+id: com.kingzcheung.xime.plugin.quick_phrase
+name: 常用语
+author: Xime
+description: "把常用语联想进候选栏：读取宿主快捷发送库（设置里的快捷短语，含触发编码），输入时内容命中跟随该候选，编码命中放第二候选位，点选即上屏。数据经 host.quickSend.list() 读取。"
+type: remote
+tags:
+- 候选
+- 常用语
+pluginType: tool
+icon: "语"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  candidate_transform: true
+  quick_send_read: true
+  events:
+  - quick_send_changed
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 1.0.0
+versions:
+- version: 1.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/quick-phrase-1.0.0.xipk
+    size: 1.5 KB
+    sha256: c52ef2fd9b902130cec88aa5910bf6f28454cdecae8af91a6aa663e2ee63c761
+    sizeBytes: 1563

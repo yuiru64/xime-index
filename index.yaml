@@ -11,9 +11,17 @@ schemas:
 plugins:
   from: "./plugins/index.yaml"
 
+# ─── 插件 v2（JS/QuickJS 插件，宿主 >=3.0.0，详见 plugins/v2/ 目录）──
+plugins_v2:
+  from: "./plugins/v2/index.yaml"
+
 # ─── 模型（详见 models/ 目录）───────────────────────────
 models:
   from: "./models/index.yaml"
+
+# ─── 键盘布局（详见 layouts/ 目录）───────────────────────
+layouts:
+  from: "./layouts/index.yaml"
 
 # ─── 索引源 ───────────────────────────────────────────────
 sources:

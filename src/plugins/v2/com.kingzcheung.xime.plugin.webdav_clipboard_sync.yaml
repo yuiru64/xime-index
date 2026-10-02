@@ -1,0 +1,44 @@
+id: com.kingzcheung.xime.plugin.webdav_clipboard_sync
+name: WebDAV 剪贴板同步
+author: Xime
+description: "通过 WebDAV 文件同步剪贴板（文本，多设备），目前仅测试了坚果云盘的 WebDAV 接口。"
+type: remote
+tags:
+- 剪贴板
+- 同步
+pluginType: clipboard_sync
+icon: "☁️"
+activation: single
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  clipboard_sync:
+    protocols:
+    - webdav
+network:
+  hosts: []
+  allowCustomHosts: true
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 1.1.0
+versions:
+- version: 1.1.0
+  date: '2026-09-29'
+  changelog: | 
+    1. 添加图片剪贴板功能支持 
+    2. 支持插件配置剪贴板同步拉取间隔 
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/webdav-clipboard-sync-1.1.0.xipk
+    size: 4.07 KB
+    sha256: c5eeb5b7a8c9d16d42b3a985f6d74154dd8b86be0753d19861d300e2b43096b6
+    sizeBytes: 3169
+- version: 1.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-clipboard-sync-1.0.0.xipk
+    size: 3.1 KB
+    sha256: 8c4578dd64b30c8bd81cb2855e47429fd826ff55e360cc3686f51b425534b884
+    sizeBytes: 3169

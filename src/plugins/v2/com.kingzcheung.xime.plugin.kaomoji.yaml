@@ -1,0 +1,32 @@
+id: com.kingzcheung.xime.plugin.kaomoji
+name: 颜文字表情包
+author: Xime
+description: "包含 174 个常用颜文字的表情插件"
+type: remote
+tags:
+- 表情
+- 颜文字
+pluginType: emoji
+icon: "థ౪థ"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  emoji:
+    supportsSearch: true
+    columns: 3
+    itemHeightDp: 30
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 4.0.0
+versions:
+- version: 4.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/kaomoji-4.0.0.xipk
+    size: 3.0 KB
+    sha256: 850d37ed6af0a6cc579c21fb63db574931e2b173aa7494a8b59eb0b67a2a05c2
+    sizeBytes: 3029

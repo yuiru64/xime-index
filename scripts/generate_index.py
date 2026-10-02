@@ -43,6 +43,12 @@ MODEL_FIELDS = [
     "currentVersion", "versions",
 ]
 
+LAYOUT_FIELDS = [
+    "id", "name", "author", "description", "tags",
+    "repo", "homepage", "license", "appVersion", "requiresSchemes",
+    "screenshots", "warning", "currentVersion", "versions",
+]
+
 # ─── 辅助函数 ────────────────────────────────────────────
 
 
@@ -117,6 +123,10 @@ HEADERS = {
         "# Xime 模型子索引\n"
         "# ⚠️ 此文件由 scripts/generate_index.py 自动生成，请勿手动编辑\n"
     ),
+    "layouts": (
+        "# Xime 键盘布局子索引\n"
+        "# ⚠️ 此文件由 scripts/generate_index.py 自动生成，请勿手动编辑\n"
+    ),
 }
 
 
@@ -142,6 +152,7 @@ def generate_index(subdir, key, fields, src_subdir=None):
         default_flow_style=False,
         sort_keys=False,
     )
+    os.makedirs(os.path.dirname(index_path), exist_ok=True)
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(header + yaml_str)
 
@@ -218,15 +229,64 @@ def validate_model_index(subdir, key):
     return True
 
 
+def validate_layout_index(subdir, key):
+    """校验生成的布局索引数据完整性"""
+    index_path = os.path.join(ROOT, subdir, "index.yaml")
+    data = load_yaml(index_path)
+    assert data.get("index_version") == 1, f"{subdir}/index.yaml: index_version must be 1"
+    assert key in data, f"{subdir}/index.yaml: missing '{key}'"
+
+    items = data[key]
+    for entry in items:
+        assert "id" in entry, f"{subdir}: missing id in entry"
+        assert "name" in entry, f"{entry['id']}: missing name"
+        assert "license" in entry, f"{entry['id']}: missing license"
+        assert "currentVersion" in entry, f"{entry['id']}: missing currentVersion"
+        assert "versions" in entry, f"{entry['id']}: missing versions"
+
+        if entry.get("requiresSchemes"):
+            assert isinstance(entry["requiresSchemes"], list), \
+                f"{entry['id']}: requiresSchemes must be a list"
+        if entry.get("screenshots"):
+            assert isinstance(entry["screenshots"], list), \
+                f"{entry['id']}: screenshots must be a list"
+            assert 1 <= len(entry["screenshots"]) <= 5, \
+                f"{entry['id']}: screenshots must be 1~5"
+
+        for v in entry["versions"]:
+            assert "version" in v, f"{entry['id']}: version entry missing 'version'"
+            assert "date" in v, f"{entry['id']} v{v['version']}: missing date"
+            dl = v.get("downloadUrl")
+            assert dl, f"{entry['id']} v{v['version']}: missing downloadUrl"
+            assert isinstance(dl, list), f"{entry['id']} v{v['version']}: downloadUrl must be a list"
+            for i, item in enumerate(dl):
+                assert isinstance(item, dict), \
+                    f"{entry['id']} v{v['version']} downloadUrl[{i}]: must be object"
+                assert "url" in item, f"{entry['id']} v{v['version']} downloadUrl[{i}]: missing url"
+                assert "sha256" in item, f"{entry['id']} v{v['version']} downloadUrl[{i}]: missing sha256"
+
+        print(f"  {entry['id']}: valid ({len(entry['versions'])} versions)")
+
+    print(f"  {subdir}/index.yaml: {len(items)} entries, all valid")
+    return True
+
+
 # ─── 主入口 ──────────────────────────────────────────────
 
 
 def main():
+    print("⚠ scripts/generate_index.py 已弃用，未做任何改动。")
+    print("  原因：源目录已按 src/plugins/v1、src/plugins/v2 归档；本脚本不会补全 sha256/size。")
+    print("  请改用：python scripts/ci-update.py")
+    sys.exit(1)
+
+
+def _legacy_main():
     args = set(sys.argv[1:])
     check_only = "--check" in args
     validate_only = "--validate" in args
 
-    SUBDIRS = ("rimes", "plugins", "models")
+    SUBDIRS = ("rimes", "plugins", "models", "layouts")
 
     # 暂存当前内容（用于 check 模式）
     snapshots = {}
@@ -241,12 +301,14 @@ def main():
     generate_index("rimes", "schemas", SCHEMA_FIELDS)
     generate_index("plugins", "plugins", PLUGIN_FIELDS)
     generate_index("models", "models", MODEL_FIELDS)
+    generate_index("layouts", "layouts", LAYOUT_FIELDS)
 
     # 校验（生成后自动校验）
     print("Validating generated index files...")
     validate_index("rimes", "schemas")
     validate_index("plugins", "plugins")
     validate_model_index("models", "models")
+    validate_layout_index("layouts", "layouts")
 
     # check 模式：检测是否有变动
     if check_only:
@@ -273,6 +335,7 @@ def main():
     print("   - rimes/index.yaml")
     print("   - plugins/index.yaml")
     print("   - models/index.yaml")
+    print("   - layouts/index.yaml")
 
 
 if __name__ == "__main__":

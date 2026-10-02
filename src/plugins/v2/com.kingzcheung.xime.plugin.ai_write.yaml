@@ -1,0 +1,33 @@
+id: com.kingzcheung.xime.plugin.ai_write
+name: AI 帮写
+author: Xime
+description: "输入草稿/指令，SSE 流式生成长文本，支持任意 OpenAI 兼容接口。"
+type: remote
+tags:
+- AI
+- 写作
+- 工具
+pluginType: tool
+icon: "帮"
+activation: multi
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  tool:
+    display: direct
+network:
+  allowCustomHosts: true
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 1.0.0
+versions:
+- version: 1.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-write-1.0.0.xipk
+    size: 2.6 KB
+    sha256: 8cd6d793bbda0bd60d6b53f9847871262023ab59961ea288f09c6a5cfd3a9b8f
+    sizeBytes: 2674

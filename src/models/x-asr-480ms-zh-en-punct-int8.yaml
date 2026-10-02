@@ -1,0 +1,31 @@
+id: x-asr-480ms-zh-en-punct-int8
+name: X-ASR 中英文语音识别（带标点）
+author: X-ASR Team
+description: 中英文混合语音识别，说中文、说英文都能识别，结果自动加标点；边说边出字，完全离线运行，录音不外传。
+category: asr
+size: 133.90MB
+type: remote
+tags:
+- 语音
+- 中英文
+- 标点
+- 离线
+homepage: https://www.modelscope.cn/models/adaada88/sherpa-onnx-x-asr-480ms-streaming-zipformer-transducer-zh-en-punct-int8
+license: Apache-2.0
+appVersion: '>=3.0.0-beta6'
+currentVersion: v1.0
+versions:
+- version: v1.0
+  date: '2026-06-05'
+  changelog: 首个版本：中英文流式识别，自动标点（int8 量化）
+  storageDir: ''
+  archive:
+    url: https://www.modelscope.cn/models/adaada88/sherpa-onnx-x-asr-480ms-streaming-zipformer-transducer-zh-en-punct-int8/resolve/master/sherpa-onnx-x-asr-480ms-streaming-zipformer-transducer-zh-en-punct-int8-2026-06-05.tar.bz2
+    sha256: fa5f63d618e5a01526e275a358bb7772e403f84808a4769fba52cffd8160bf74
+    size: 133.90MB
+    sizeBytes: 133895136
+  files:
+  - name: encoder.int8.onnx
+  - name: decoder.onnx
+  - name: joiner.int8.onnx
+  - name: tokens.txt

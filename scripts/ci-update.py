@@ -23,8 +23,8 @@ from lib import (
 )
 
 # ─── 源码目录 vs 输出目录 ────────────────────────────────
-# 源码: src/rimes/*.yaml, src/plugins/*.yaml, src/models/*.yaml
-# 输出: rimes/index.yaml, plugins/index.yaml, models/index.yaml
+# 源码: src/rimes/*.yaml, src/plugins/v1/*.yaml, src/plugins/v2/*.yaml, src/models/*.yaml, src/layouts/*.yaml
+# 输出: rimes/index.yaml, plugins/index.yaml, plugins/v2/index.yaml, models/index.yaml, layouts/index.yaml
 SRC_DIR = os.path.join(ROOT, "src")
 SKIP_FILES = {"index.yaml"}
 
@@ -40,10 +40,23 @@ PLUGIN_FIELDS = [
     "tags", "pluginType", "homepage", "license",
     "appVersion", "warning", "currentVersion", "versions",
 ]
+# v2 插件索引（JS/QuickJS，宿主 >=3.0.0）：在旧字段上追加新插件系统的元数据
+PLUGIN_V2_FIELDS = [
+    "id", "name", "author", "description", "type",
+    "tags", "pluginType", "icon", "activation",
+    "minHostVersion", "platforms", "capabilities", "network",
+    "homepage", "license",
+    "appVersion", "warning", "currentVersion", "versions",
+]
 MODEL_FIELDS = [
     "id", "name", "author", "description", "category", "size",
     "type", "tags", "homepage", "license", "appVersion", "warning",
     "currentVersion", "versions",
+]
+LAYOUT_FIELDS = [
+    "id", "name", "author", "description", "tags",
+    "repo", "homepage", "license", "appVersion", "requiresSchemes",
+    "screenshots", "warning", "currentVersion", "versions",
 ]
 
 
@@ -52,7 +65,7 @@ MODEL_FIELDS = [
 
 def check():
     any_needed = False
-    for subdir in ("rimes", "plugins", "models"):
+    for subdir in ("rimes", "plugins/v1", "plugins/v2", "models", "layouts"):
         src_dir = os.path.join(SRC_DIR, subdir)
         for fpath in sorted(glob.glob(os.path.join(src_dir, "*.yaml"))):
             basename = os.path.basename(fpath)
@@ -86,14 +99,28 @@ def check():
 
 # ─── 补合并写回源文件 ──────────────────────────────────
 
+# 输出子索引文件头
+HEADERS = {
+    "rimes": "# Xime 输入方案子索引\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
+    "plugins": "# Xime 插件子索引（旧版 Lua/DEX，兼容旧版 App）\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
+    "plugins/v2": "# Xime v2 插件子索引（JS/QuickJS 插件，宿主 >=3.0.0）\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
+    "models": "# Xime 模型子索引\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
+    "layouts": "# Xime 键盘布局子索引\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
+}
 
-def update_source(subdir: str, fields: list, filler):
-    """处理单个子目录：从 src/ 读源码 → 补全 checksum → 输出 index.yaml（不修改 src/）"""
+
+def update_source(src_subdir, out_subdir, key, fields, filler, header, index_version=1):
+    """从 src/<src_subdir>/ 读源码 → 补全 checksum → 输出 <out_subdir>/index.yaml（不修改 src/）。
+
+    src 与 out 显式分离，便于归档：
+      - src/plugins/v1 → plugins/index.yaml    旧版稳定 URL（旧 App 硬编码，不可改动）
+      - src/plugins/v2 → plugins/v2/index.yaml v2 新索引
+    """
     from datetime import date
     today = date.today().isoformat()
 
-    src_dir = os.path.join(SRC_DIR, subdir)
-    out_dir = os.path.join(ROOT, subdir)
+    src_dir = os.path.join(SRC_DIR, src_subdir)
+    out_dir = os.path.join(ROOT, out_subdir)
 
     entries = []
     for fpath in sorted(glob.glob(os.path.join(src_dir, "*.yaml"))):
@@ -106,7 +133,7 @@ def update_source(subdir: str, fields: list, filler):
             print(f"  ⚠ {basename}: id 不匹配，跳过")
             continue
 
-        print(f"  📄 src/{subdir}/{basename}")
+        print(f"  📄 src/{src_subdir}/{basename}")
         filled = filler({f: enable_proxy(data[f]) if f == "versions"
                          else data[f] for f in data})  # 只补全内存数据，不写回 src/
         entry = {f: filled[f] for f in fields if f in filled and filled[f] is not None}
@@ -120,22 +147,13 @@ def update_source(subdir: str, fields: list, filler):
         )
     )
 
-    # 输出 index.yaml 到根级目录（rimes/ plugins/ models/）
-    HEADERS = {
-        "rimes": "# Xime 输入方案子索引\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
-        "plugins": "# Xime 插件子索引\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
-        "models": "# Xime 模型子索引\n# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑\n",
-    }
-    key_map = {"rimes": "schemas", "plugins": "plugins", "models": "models"}
-    key = key_map[subdir]
-
     os.makedirs(out_dir, exist_ok=True)
-    index = {"index_version": 1, "updated_at": today, key: entries}
+    index = {"index_version": index_version, "updated_at": today, key: entries}
     yaml_str = yaml.dump(index, allow_unicode=True, default_flow_style=False, sort_keys=False)
     index_path = os.path.join(out_dir, "index.yaml")
     with open(index_path, "w", encoding="utf-8") as f:
-        f.write(HEADERS[subdir] + yaml_str)
-    print(f"  ✓ 已重新生成 {subdir}/index.yaml ({len(entries)} 条目)")
+        f.write(header + yaml_str)
+    print(f"  ✓ 已重新生成 {out_subdir}/index.yaml ({len(entries)} 条目)")
 
 
 def update():
@@ -143,11 +161,23 @@ def update():
     print("🔄 CI 自动补全 sha256/size/sizeBytes")
     print("=" * 50)
 
-    update_source("rimes", SCHEMA_FIELDS, fill_download_urls)
+    update_source("rimes", "rimes", "schemas", SCHEMA_FIELDS, fill_download_urls, HEADERS["rimes"])
     print()
-    update_source("plugins", PLUGIN_FIELDS, fill_download_urls)
+    # 旧版插件：源归档在 src/plugins/v1，发布到旧 App 硬编码读取的 plugins/index.yaml
+    update_source("plugins/v1", "plugins", "plugins", PLUGIN_FIELDS, fill_download_urls, HEADERS["plugins"])
     print()
-    update_source("models", MODEL_FIELDS, lambda d: recalc_model_size(fill_files_checksums(fill_archive(d))))
+    # v2 插件：源在 src/plugins/v2，发布到 plugins/v2/index.yaml
+    update_source(
+        "plugins/v2", "plugins/v2", "plugins", PLUGIN_V2_FIELDS, fill_download_urls,
+        HEADERS["plugins/v2"], index_version=2,
+    )
+    print()
+    update_source(
+        "models", "models", "models", MODEL_FIELDS,
+        lambda d: recalc_model_size(fill_files_checksums(fill_archive(d))), HEADERS["models"],
+    )
+    print()
+    update_source("layouts", "layouts", "layouts", LAYOUT_FIELDS, fill_download_urls, HEADERS["layouts"])
 
     print(f"\n{'=' * 50}")
     print("✅ 所有源文件已更新")

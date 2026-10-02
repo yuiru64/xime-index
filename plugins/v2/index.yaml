@@ -1,0 +1,386 @@
+# Xime v2 插件子索引（JS/QuickJS 插件，宿主 >=3.0.0）
+# ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
+index_version: 2
+updated_at: '2026-10-01'
+plugins:
+- id: com.kingzcheung.xime.plugin.ai_reply
+  name: AI 智能回复
+  author: Xime
+  description: 根据对方消息生成 3~5 条回复候选，点选上屏。支持任意 OpenAI 兼容的 chat/completions 接口。
+  type: remote
+  tags:
+  - AI
+  - 回复
+  - 工具
+  pluginType: tool
+  icon: 应
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    tool:
+      display: passive
+  network:
+    allowCustomHosts: true
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-reply-1.0.0.xipk
+      size: 3.4 KB
+      sha256: 4e545421c86b1d9e5ac4f06190d1e29a05fe3279d0639a1d3175529b102728dc
+      sizeBytes: 3469
+- id: com.kingzcheung.xime.plugin.ai_write
+  name: AI 帮写
+  author: Xime
+  description: 输入草稿/指令，SSE 流式生成长文本，支持任意 OpenAI 兼容接口。
+  type: remote
+  tags:
+  - AI
+  - 写作
+  - 工具
+  pluginType: tool
+  icon: 帮
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    tool:
+      display: direct
+  network:
+    allowCustomHosts: true
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-write-1.0.0.xipk
+      size: 2.6 KB
+      sha256: 8cd6d793bbda0bd60d6b53f9847871262023ab59961ea288f09c6a5cfd3a9b8f
+      sizeBytes: 2674
+- id: com.kingzcheung.xime.plugin.funasr_asr
+  name: 阿里百炼 FunAsr
+  author: Xime
+  description: 阿里百炼 FunAsr 在线语音识别，使用阿里云控制台获取的 API Key，可参考快速入门（https://www.aliyun.com/product/bailian）
+  type: remote
+  tags:
+  - 语音
+  - ASR
+  pluginType: speech
+  icon: 🎤
+  activation: single
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    speech:
+      inputMode: streaming
+      supportsPartialResults: true
+  network:
+    hosts:
+    - dashscope.aliyuncs.com
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 3.1.0
+  versions:
+  - version: 3.1.0
+    date: '2026-09-29'
+    changelog: 1. 优化语音输入在发送场景下的文本处理
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/funasr-asr-3.1.0.xipk
+      size: 9.6 KB
+      sha256: 4955983d5e1f95e3e573a273f85d47cfeb09a20d3a36d7dcc61cbdbe2c4dc524
+      sizeBytes: 9499
+  - version: 3.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/funasr-asr-3.0.0.xipk
+      size: 9.3 KB
+      sha256: a20e4d08dba211026b5236f07fd10d9b708caf118f0846e4905b50dca8cccaac
+      sizeBytes: 9499
+- id: com.kingzcheung.xime.plugin.kaomoji
+  name: 颜文字表情包
+  author: Xime
+  description: 包含 174 个常用颜文字的表情插件
+  type: remote
+  tags:
+  - 表情
+  - 颜文字
+  pluginType: emoji
+  icon: థ౪థ
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    emoji:
+      supportsSearch: true
+      columns: 3
+      itemHeightDp: 30
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 4.0.0
+  versions:
+  - version: 4.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/kaomoji-4.0.0.xipk
+      size: 3.0 KB
+      sha256: 850d37ed6af0a6cc579c21fb63db574931e2b173aa7494a8b59eb0b67a2a05c2
+      sizeBytes: 3029
+- id: com.kingzcheung.xime.plugin.meme_bunny
+  name: 恶搞兔表情包
+  author: Xime
+  description: 恶搞兔表情包（6 个表情图片），这只是一个示例插件，展示了如何在 Xime 中使用脚本插件开发表情包功能。
+  type: remote
+  tags:
+  - 表情
+  - 贴纸
+  pluginType: emoji
+  icon: 🐰
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    emoji:
+      supportsSearch: true
+      columns: 3
+      itemHeightDp: 110
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 4.0.0
+  versions:
+  - version: 4.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/meme-bunny-4.0.0.xipk
+      size: 65.0 KB
+      sha256: 85473b8219987fb865b7d7e998143826ebee62c7fd7125fcf36ffaabf1989feb
+      sizeBytes: 66510
+- id: com.kingzcheung.xime.plugin.quick_phrase
+  name: 常用语
+  author: Xime
+  description: 把常用语联想进候选栏：读取宿主快捷发送库（设置里的快捷短语，含触发编码），输入时内容命中跟随该候选，编码命中放第二候选位，点选即上屏。数据经
+    host.quickSend.list() 读取。
+  type: remote
+  tags:
+  - 候选
+  - 常用语
+  pluginType: tool
+  icon: 语
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    candidate_transform: true
+    quick_send_read: true
+    events:
+    - quick_send_changed
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/quick-phrase-1.0.0.xipk
+      size: 1.5 KB
+      sha256: c52ef2fd9b902130cec88aa5910bf6f28454cdecae8af91a6aa663e2ee63c761
+      sizeBytes: 1563
+- id: com.kingzcheung.xime.plugin.qwen_translate
+  name: 千问翻译
+  author: Xime
+  description: qwen-mt 专用翻译：翻译选中文本/输入框内容，结果替换原选区或光标处追加。基于阿里云百炼 qwen-mt 系列翻译模型。
+  type: remote
+  tags:
+  - AI
+  - 翻译
+  - 工具
+  pluginType: tool
+  icon: 译
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    tool:
+      display: direct
+  network:
+    allowCustomHosts: true
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/qwen-translate-1.0.0.xipk
+      size: 2.6 KB
+      sha256: 7dbf11f14e37414a4b39cee4dcdb73b4aeb6808275df91c50f148b37cecd3797
+      sizeBytes: 2637
+- id: com.kingzcheung.xime.plugin.typing_stats
+  name: 输入统计
+  author: Xime
+  description: 统计打字量（今日/累计字数、提交次数）。基于宿主下行事件，无网络访问。
+  type: remote
+  tags:
+  - 工具
+  - 统计
+  pluginType: tool
+  icon: 统
+  activation: multi
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    tool:
+      display: passive
+    events:
+    - input_changed
+    - text_committed
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/typing-stats-1.0.0.xipk
+      size: 2.5 KB
+      sha256: d0283fa91642e17045c4a314a5539ca059164b0fb984821a2f21145655a6fb06
+      sizeBytes: 2592
+- id: com.kingzcheung.xime.plugin.volc_asr
+  name: 火山引擎流式语音识别
+  author: Xime
+  description: 火山方舟在线语音识别。使用火山引擎控制台获取的 App Key，可参考快速入门（https://console.volcengine.com/speech/new/setting/apikeys）
+  type: remote
+  tags:
+  - 语音
+  - ASR
+  pluginType: speech
+  icon: 🎙️
+  activation: single
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    speech:
+      inputMode: streaming
+      supportsPartialResults: true
+  network:
+    hosts:
+    - openspeech.bytedance.com
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 3.0.0
+  versions:
+  - version: 3.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/volc-asr-3.0.0.xipk
+      size: 8.8 KB
+      sha256: 5b7429451b73355acb14bbc18a72eb8e6ccc1490609c6b2570547ddeb357f41b
+      sizeBytes: 9043
+- id: com.kingzcheung.xime.plugin.webdav_backup
+  name: WebDAV 云备份
+  author: Xime
+  description: 通过 WebDAV 将输入方案、自造词、插件与设置备份到云端（已测试坚果云），支持备份列表、恢复与删除。
+  type: remote
+  tags:
+  - 备份
+  - WebDAV
+  pluginType: backup
+  icon: ☁️
+  activation: single
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    backup:
+      protocols:
+      - webdav
+  network:
+    hosts: []
+    allowCustomHosts: true
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 2.0.0
+  versions:
+  - version: 2.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-backup-2.0.0.xipk
+      size: 3.7 KB
+      sha256: 54d9cf58eaa245ca6fe462ba9e85bf000e6c3eb0adad444d5be5e806e29457a4
+      sizeBytes: 3780
+- id: com.kingzcheung.xime.plugin.webdav_clipboard_sync
+  name: WebDAV 剪贴板同步
+  author: Xime
+  description: 通过 WebDAV 文件同步剪贴板（文本，多设备），目前仅测试了坚果云盘的 WebDAV 接口。
+  type: remote
+  tags:
+  - 剪贴板
+  - 同步
+  pluginType: clipboard_sync
+  icon: ☁️
+  activation: single
+  minHostVersion: 3.0.0
+  platforms:
+  - android
+  capabilities:
+    clipboard_sync:
+      protocols:
+      - webdav
+  network:
+    hosts: []
+    allowCustomHosts: true
+  homepage: https://github.com/ximeiorg/Xime
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  currentVersion: 1.1.0
+  versions:
+  - version: 1.1.0
+    date: '2026-09-29'
+    changelog: "1. 添加图片剪贴板功能支持 \n2. 支持插件配置剪贴板同步拉取间隔 \n"
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/webdav-clipboard-sync-1.1.0.xipk
+      size: 4.07 KB
+      sha256: c5eeb5b7a8c9d16d42b3a985f6d74154dd8b86be0753d19861d300e2b43096b6
+      sizeBytes: 3169
+  - version: 1.0.0
+    date: '2026-09-24'
+    changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+    downloadUrl:
+    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-clipboard-sync-1.0.0.xipk
+      size: 3.1 KB
+      sha256: 8c4578dd64b30c8bd81cb2855e47429fd826ff55e360cc3686f51b425534b884
+      sizeBytes: 3169

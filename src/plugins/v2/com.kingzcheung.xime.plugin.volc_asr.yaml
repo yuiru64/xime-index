@@ -1,0 +1,34 @@
+id: com.kingzcheung.xime.plugin.volc_asr
+name: 火山引擎流式语音识别
+author: Xime
+description: "火山方舟在线语音识别。使用火山引擎控制台获取的 App Key，可参考快速入门（https://console.volcengine.com/speech/new/setting/apikeys）"
+type: remote
+tags:
+- 语音
+- ASR
+pluginType: speech
+icon: "🎙️"
+activation: single
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  speech:
+    inputMode: streaming
+    supportsPartialResults: true
+network:
+  hosts:
+  - openspeech.bytedance.com
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 3.0.0
+versions:
+- version: 3.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/volc-asr-3.0.0.xipk
+    size: 8.8 KB
+    sha256: 5b7429451b73355acb14bbc18a72eb8e6ccc1490609c6b2570547ddeb357f41b
+    sizeBytes: 9043

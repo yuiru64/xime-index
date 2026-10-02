@@ -1,0 +1,34 @@
+id: com.kingzcheung.xime.plugin.webdav_backup
+name: WebDAV 云备份
+author: Xime
+description: "通过 WebDAV 将输入方案、自造词、插件与设置备份到云端（已测试坚果云），支持备份列表、恢复与删除。"
+type: remote
+tags:
+- 备份
+- WebDAV
+pluginType: backup
+icon: "☁️"
+activation: single
+minHostVersion: '3.0.0'
+platforms:
+- android
+capabilities:
+  backup:
+    protocols:
+    - webdav
+network:
+  hosts: []
+  allowCustomHosts: true
+homepage: https://github.com/ximeiorg/Xime
+license: GPL-3.0
+appVersion: '>=3.0.0'
+currentVersion: 2.0.0
+versions:
+- version: 2.0.0
+  date: '2026-09-24'
+  changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-backup-2.0.0.xipk
+    size: 3.7 KB
+    sha256: 54d9cf58eaa245ca6fe462ba9e85bf000e6c3eb0adad444d5be5e806e29457a4
+    sizeBytes: 3780
