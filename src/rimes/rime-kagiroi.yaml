@@ -1,0 +1,38 @@
+id: rime-kagiroi
+name: Kagiroi日语输入
+author: pfeiwu
+description: 基于Rime实现的日语输入方案
+type: remote
+tags:
+- 日语
+- 罗马音
+homepage: https://github.com/rimeinn/rime-kagiroi
+appVersion: '>=2.4.0'
+currentVersion: master
+versions:
+- version: master
+  date: '2026-10-02'
+  changelog: ''
+  downloadUrl:
+  - url: https://github.com/rimeinn/rime-kagiroi/archive/refs/heads/main.zip
+    sha256: ''
+    size: 38.7 MB
+schemas:
+- kagiroi
+recipes:
+- id: full
+  name: 全量
+  files:
+  - lua/kagiroi/*.lua
+  - opencc/*
+  - kagiroi*.yaml
+  - default.yaml
+  - README.md
+  - README-zh-hans.md
+- id: schemas
+  name: 仅方案
+  files:
+  - lua/kagiroi/*.lua
+  - opencc/*
+  - kagiroi*.yaml
+

@@ -1,7 +1,7 @@
 # Xime v2 插件子索引（JS/QuickJS 插件，宿主 >=3.0.0）
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 2
-updated_at: '2026-10-01'
+updated_at: '2026-10-03'
 plugins:
 - id: com.kingzcheung.xime.plugin.ai_reply
   name: AI 智能回复
@@ -32,7 +32,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-reply-1.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-reply-1.0.0.xipk
       size: 3.4 KB
       sha256: 4e545421c86b1d9e5ac4f06190d1e29a05fe3279d0639a1d3175529b102728dc
       sizeBytes: 3469
@@ -65,7 +65,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-write-1.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/ai-write-1.0.0.xipk
       size: 2.6 KB
       sha256: 8cd6d793bbda0bd60d6b53f9847871262023ab59961ea288f09c6a5cfd3a9b8f
       sizeBytes: 2674
@@ -99,7 +99,7 @@ plugins:
     date: '2026-09-29'
     changelog: 1. 优化语音输入在发送场景下的文本处理
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/funasr-asr-3.1.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/funasr-asr-3.1.0.xipk
       size: 9.6 KB
       sha256: 4955983d5e1f95e3e573a273f85d47cfeb09a20d3a36d7dcc61cbdbe2c4dc524
       sizeBytes: 9499
@@ -107,7 +107,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/funasr-asr-3.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/funasr-asr-3.0.0.xipk
       size: 9.3 KB
       sha256: a20e4d08dba211026b5236f07fd10d9b708caf118f0846e4905b50dca8cccaac
       sizeBytes: 9499
@@ -139,7 +139,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/kaomoji-4.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/kaomoji-4.0.0.xipk
       size: 3.0 KB
       sha256: 850d37ed6af0a6cc579c21fb63db574931e2b173aa7494a8b59eb0b67a2a05c2
       sizeBytes: 3029
@@ -171,7 +171,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/meme-bunny-4.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/meme-bunny-4.0.0.xipk
       size: 65.0 KB
       sha256: 85473b8219987fb865b7d7e998143826ebee62c7fd7125fcf36ffaabf1989feb
       sizeBytes: 66510
@@ -204,7 +204,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/quick-phrase-1.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/quick-phrase-1.0.0.xipk
       size: 1.5 KB
       sha256: c52ef2fd9b902130cec88aa5910bf6f28454cdecae8af91a6aa663e2ee63c761
       sizeBytes: 1563
@@ -237,7 +237,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/qwen-translate-1.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/qwen-translate-1.0.0.xipk
       size: 2.6 KB
       sha256: 7dbf11f14e37414a4b39cee4dcdb73b4aeb6808275df91c50f148b37cecd3797
       sizeBytes: 2637
@@ -270,7 +270,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/typing-stats-1.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/typing-stats-1.0.0.xipk
       size: 2.5 KB
       sha256: d0283fa91642e17045c4a314a5539ca059164b0fb984821a2f21145655a6fb06
       sizeBytes: 2592
@@ -304,7 +304,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/volc-asr-3.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/volc-asr-3.0.0.xipk
       size: 8.8 KB
       sha256: 5b7429451b73355acb14bbc18a72eb8e6ccc1490609c6b2570547ddeb357f41b
       sizeBytes: 9043
@@ -338,7 +338,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-backup-2.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-backup-2.0.0.xipk
       size: 3.7 KB
       sha256: 54d9cf58eaa245ca6fe462ba9e85bf000e6c3eb0adad444d5be5e806e29457a4
       sizeBytes: 3780
@@ -372,7 +372,7 @@ plugins:
     date: '2026-09-29'
     changelog: "1. 添加图片剪贴板功能支持 \n2. 支持插件配置剪贴板同步拉取间隔 \n"
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/webdav-clipboard-sync-1.1.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta5/webdav-clipboard-sync-1.1.0.xipk
       size: 4.07 KB
       sha256: c5eeb5b7a8c9d16d42b3a985f6d74154dd8b86be0753d19861d300e2b43096b6
       sizeBytes: 3169
@@ -380,7 +380,7 @@ plugins:
     date: '2026-09-24'
     changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+
     downloadUrl:
-    - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-clipboard-sync-1.0.0.xipk
+    - url: https://gh-proxy.org/https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta1/webdav-clipboard-sync-1.0.0.xipk
       size: 3.1 KB
       sha256: 8c4578dd64b30c8bd81cb2855e47429fd826ff55e360cc3686f51b425534b884
       sizeBytes: 3169

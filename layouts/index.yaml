@@ -1,7 +1,7 @@
 # Xime 键盘布局子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-10-01'
+updated_at: '2026-10-03'
 layouts:
 - id: flypy
   name: 小鹤双拼带韵母
@@ -79,6 +79,7 @@ layouts:
     - url: https://cdn.jsdelivr.net/gh/cz-archive/number_rows@master/xime.custom.yaml
       sha256: 88d6e994f193a74ae8be95e134f46cbccbb39d970aed68e6e720dff560b0e271
       size: 2.5 KB
+      sizeBytes: 2591
 - id: wubi_compact
   name: 五笔86紧凑布局
   author: kingzcheung

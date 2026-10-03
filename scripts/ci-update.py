@@ -34,6 +34,7 @@ SCHEMA_FIELDS = [
     "id", "name", "author", "description", "type",
     "tags", "homepage", "license", "dependencies",
     "appVersion", "warning", "currentVersion", "versions",
+    "recipes", "schemas",
 ]
 PLUGIN_FIELDS = [
     "id", "name", "author", "description", "type",

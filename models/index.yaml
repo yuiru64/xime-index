@@ -1,7 +1,7 @@
 # Xime 模型子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-10-01'
+updated_at: '2026-10-03'
 models:
 - id: ochwpro
   name: 手写模型
@@ -177,4 +177,8 @@ models:
       sha256: 5a2832047ea1f97dd0dc595b816c230c4bafad65cfc0341fa57517cadc50afd0
       size: 132.63MB
       sizeBytes: 132634597
-    files: []
+    files:
+    - name: encoder.int8.onnx
+    - name: decoder.onnx
+    - name: joiner.int8.onnx
+    - name: tokens.txt

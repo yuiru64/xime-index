@@ -22,3 +22,31 @@ versions:
     sha256: ""
     size: 401 MB
     sizeBytes: 123026414
+recipes:
+- id: full
+  name: 全量
+  files:
+  - dicts/*.*
+  - custom/*.*
+  - lua/*.*
+  - lua/data/*.*
+  - lua/wanxiang/*.*
+  - opencc/*.*
+  - opencc/wanxiang/*.*
+  - default.yaml
+  - wanxiang*.*yaml
+  - README.md
+  - custom_phrase.dict.yaml
+- id: schemas
+  name: 仅方案
+  files:
+  - dicts/*.*
+  - custom/*.*
+  - lua/*.*
+  - lua/data/*.*
+  - lua/wanxiang/*.*
+  - opencc/*.*
+  - opencc/wanxiang/*.*
+  - wanxiang*.*yaml
+  - custom_phrase.dict.yaml
+

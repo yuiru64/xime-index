@@ -18,10 +18,11 @@ USER_AGENT = "Xime-Index-Checksum/1.0"
 BASE_GIT_PROXY = "https://gh-proxy.org/"
 
 def enable_proxy(versions):
-    if not isinstance(versions, list): return []
+    if not isinstance(versions, list): return versions
     
-    new_versions = []
-    for version in versions:
+    import copy
+    new_versions = copy.deepcopy(versions)
+    for version in new_versions:
         if not isinstance(version, dict): continue
         if "downloadUrl" in version:
             key = "downloadUrl"
@@ -33,18 +34,13 @@ def enable_proxy(versions):
         files = version[key]
         if not isinstance(files, list): continue
         
-        new_files = []
-        for url_entry in files:
-            if not isinstance(url_entry, dict): continue
-            if "url" not in url_entry: continue
-            if re.match("^https://github.com/.*$", url_entry["url"]):
-                new_url = BASE_GIT_PROXY + url_entry["url"]
-                new_files.append({**url_entry, "url": new_url})
-            else:
-                new_files.append(url_entry.copy())
-        
-        new_versions.append({**version, key: new_files})
-        return new_versions
+        for file in files:
+            if not isinstance(file, dict): continue
+            if "url" not in file: continue
+            if re.match("^https://github.com/.*$", file["url"]):
+                new_url = BASE_GIT_PROXY + file["url"]
+                file["url"] = new_url
+    return new_versions
 
 def human_size(bytes_val: int) -> str:
     if bytes_val < 1024:
@@ -113,7 +109,7 @@ def fill_download_urls(data: dict) -> dict:
 
         for dl in v.get("downloadUrl", []):
             url = dl.get("url", "")
-            if not url or (dl.get("sha256") and dl.get("size")):
+            if not url or (dl.get("sha256") and dl.get("size") and dl.get("sizeBytes")):
                 continue
             # 跳过 .gram 文件，不生成 sha256
             if url.endswith(".gram"):
