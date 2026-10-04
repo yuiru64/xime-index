@@ -53,23 +53,33 @@ def human_size(bytes_val: int) -> str:
         return f"{bytes_val / (1024 * 1024 * 1024):.2f} GB"
 
 
-def download_checksum(url: str):
+def download_checksum(url: str, checksum: bool):
     """下载文件，返回 (sha256_hex, size_bytes, size_human)。"""
     tmp_path = None
     try:
         fd, tmp_path = tempfile.mkstemp()
         os.close(fd)
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        if checksum:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        else:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="HEAD")
         with urllib.request.urlopen(req, timeout=300) as resp:
-            sha256 = hashlib.sha256()
-            size_bytes = 0
-            while True:
-                chunk = resp.read(65536)
-                if not chunk:
-                    break
-                sha256.update(chunk)
-                size_bytes += len(chunk)
-        return sha256.hexdigest(), size_bytes, human_size(size_bytes)
+            content_length = resp.headers.get("Content-Length")
+            if content_length and content_length.isdigit():
+                size_bytes = int(content_length)
+            
+            sha256_hex = ""
+            if checksum:
+                sha256 = hashlib.sha256()
+                size_bytes = 0
+                while True:
+                    chunk = resp.read(65536)
+                    if not chunk:
+                        break
+                    sha256.update(chunk)
+                    size_bytes += len(chunk)
+                sha256_hex = sha256.hexdigest()
+        return sha256_hex, size_bytes, human_size(size_bytes)
     except Exception as exc:
         print(f"    ⚠ 下载失败: {exc}")
         return None, None, None
@@ -111,16 +121,21 @@ def fill_download_urls(data: dict) -> dict:
             url = dl.get("url", "")
             if not url or (dl.get("sha256") and dl.get("size") and dl.get("sizeBytes")):
                 continue
+            
+            checksum = True
             # 跳过 .gram 文件，不生成 sha256
             if url.endswith(".gram"):
                 print(f"  ⏭ {url} (.gram 文件，跳过 sha256)")
-                continue
+                checksum = False
+
             print(f"  ↓ {url}")
-            sha256, size_bytes, size_h = download_checksum(url)
+            sha256, size_bytes, size_h = download_checksum(url, checksum)
             if sha256:
                 dl["sha256"] = sha256
+            if size_bytes:
                 dl["size"] = size_h
                 dl["sizeBytes"] = size_bytes
+            if sha256 or size_bytes:
                 print(f"    ✓ sha256={sha256[:16]}...  size={size_h}  bytes={size_bytes}")
 
     return result
@@ -144,11 +159,13 @@ def fill_archive(data: dict) -> dict:
             url = a.get("url", "")
             if url and (not a.get("sha256") or not a.get("size")):
                 print(f"  ↓ {url}")
-                sha256, size_bytes, size_h = download_checksum(url)
+                sha256, size_bytes, size_h = download_checksum(url, True)
                 if sha256:
                     a["sha256"] = sha256
+                if size_bytes:
                     a["size"] = size_h
                     a["sizeBytes"] = size_bytes
+                if sha256 or size_bytes:
                     print(f"    ✓ sha256={sha256[:16]}...  size={size_h}  bytes={size_bytes}")
 
     return result
@@ -172,7 +189,7 @@ def fill_files_checksums(data: dict) -> dict:
             if not url or (f_item.get("sha256") and f_item.get("size")):
                 continue
             print(f"  ↓ {url}")
-            sha256, size_bytes, size_h = download_checksum(url)
+            sha256, size_bytes, size_h = download_checksum(url, True)
             if sha256:
                 f_item["sha256"] = sha256
                 f_item["size"] = size_h

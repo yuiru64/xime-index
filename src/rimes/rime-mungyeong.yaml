@@ -1,0 +1,40 @@
+id: rime-mungyeong
+name: Mungyeong韩语输入方案
+author: pfeiwu
+description: 初步者를 為한 韓国語 入力機
+type: remote
+tags:
+- 韩语
+- 罗马音
+homepage: https://github.com/rimeinn/rime-mungyeong
+appVersion: '>=2.4.0'
+currentVersion: master
+versions:
+- version: master
+  date: '2026-4-10'
+  changelog: ''
+  downloadUrl:
+  - url: https://github.com/rimeinn/rime-mungyeong/archive/refs/heads/main.zip
+    sha256: ''
+    size: 4.65 MB
+schemas:
+- mungyeong
+recipes:
+- id: full
+  name: 全量
+  files:
+  - lua/mungyeong/*.lua
+  - opencc/*
+  - mungyeong*.yaml
+  - default.yaml
+  - key_bindings.yaml
+  - punctuation.yaml
+  - README.md
+  - LICENSE
+- id: schemas
+  name: 仅方案
+  files:
+  - lua/mungyeong/*.lua
+  - opencc/*
+  - mungyeong*.yaml
+

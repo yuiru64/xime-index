@@ -21,7 +21,7 @@ versions:
   - url: https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
     sha256: ""
     size: 401 MB
-    sizeBytes: 123026414
+    sizeBytes: 404661292
 recipes:
 - id: full
   name: 全量

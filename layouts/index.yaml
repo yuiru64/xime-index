@@ -1,7 +1,7 @@
 # Xime 键盘布局子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-10-03'
+updated_at: '2026-10-04'
 layouts:
 - id: flypy
   name: 小鹤双拼带韵母
@@ -57,6 +57,29 @@ layouts:
       size: 13.6 KB
       sha256: 546818990de4e6ed93a4b7f3ea7534141d317b9f89b47d59ddd5d5a54142fb33
       sizeBytes: 13974
+- id: no_bubble
+  name: 无气泡布局
+  author: kingzcheung
+  description: 给全键盘布局去掉气泡提示，适合熟练用户使用。
+  tags:
+  - 布局
+  - 全键盘
+  repo: https://github.com/cz-archive/no_bubble
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/cz-archive/no_bubble@1.0.0/0.jpg
+  currentVersion: 1.0.0
+  versions:
+  - version: 1.0.0
+    date: '2026-10-02'
+    changelog: 首个版本。
+    downloadUrl:
+    - url: https://cdn.jsdelivr.net/gh/cz-archive/no_bubble@1.0.0/xime.custom.yaml
+      size: 27.7 KB
+      sha256: a2d9a4a389fbea72a0a641602ca3e0f967015f3c9b2a4d524d4f97fba420fa30
+      sizeBytes: 28335
 - id: number_rows
   name: 数字行
   author: kingzcheung

@@ -1,7 +1,7 @@
 # Xime 输入方案子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-10-03'
+updated_at: '2026-10-04'
 schemas:
 - id: builtin
   name: 默认方案
@@ -122,7 +122,8 @@ schemas:
     downloadUrl:
     - url: https://gh-proxy.org/https://github.com/gaboolic/rime-frost/releases/download/1.0.4/rime-frost-schemas.zip
       sha256: 4f4998ae83f63d757c0a4ace192f69d48265bddfabe231642b73e3739ed0f2f5
-      size: 42 MB
+      size: 42.0 MB
+      sizeBytes: 44008360
 - id: rime-ice
   name: 雾凇拼音
   author: iDvel
@@ -154,9 +155,9 @@ schemas:
       size: 15.3 MB
       sizeBytes: 16045244
 - id: rime-kagiroi
-  name: Kagiroi日语输入
+  name: Kagiroi日语方案
   author: pfeiwu
-  description: 基于Rime实现的日语输入方案
+  description: Rimeフレームワークの日本語入力設定
   type: remote
   tags:
   - 日语
@@ -166,7 +167,7 @@ schemas:
   currentVersion: master
   versions:
   - version: master
-    date: '2026-10-02'
+    date: 2026-5-15
     changelog: ''
     downloadUrl:
     - url: https://gh-proxy.org/https://github.com/rimeinn/rime-kagiroi/archive/refs/heads/main.zip
@@ -179,9 +180,13 @@ schemas:
     - lua/kagiroi/*.lua
     - opencc/*
     - kagiroi*.yaml
+    - kagiroi.ico
     - default.yaml
+    - key_bindings.yaml
+    - punctuation.yaml
     - README.md
     - README-zh-hans.md
+    - LICENSE
   - id: schemas
     name: 仅方案
     files:
@@ -190,6 +195,45 @@ schemas:
     - kagiroi*.yaml
   schemas:
   - kagiroi
+- id: rime-mungyeong
+  name: Mungyeong韩语输入方案
+  author: pfeiwu
+  description: 初步者를 為한 韓国語 入力機
+  type: remote
+  tags:
+  - 韩语
+  - 罗马音
+  homepage: https://github.com/rimeinn/rime-mungyeong
+  appVersion: '>=2.4.0'
+  currentVersion: master
+  versions:
+  - version: master
+    date: 2026-4-10
+    changelog: ''
+    downloadUrl:
+    - url: https://gh-proxy.org/https://github.com/rimeinn/rime-mungyeong/archive/refs/heads/main.zip
+      sha256: ''
+      size: 4.65 MB
+  recipes:
+  - id: full
+    name: 全量
+    files:
+    - lua/mungyeong/*.lua
+    - opencc/*
+    - mungyeong*.yaml
+    - default.yaml
+    - key_bindings.yaml
+    - punctuation.yaml
+    - README.md
+    - LICENSE
+  - id: schemas
+    name: 仅方案
+    files:
+    - lua/mungyeong/*.lua
+    - opencc/*
+    - mungyeong*.yaml
+  schemas:
+  - mungyeong
 - id: rime-wanxiang
   name: 万象拼音标准版
   author: amzxyz
@@ -212,8 +256,8 @@ schemas:
       sizeBytes: 35263880
     - url: https://gh-proxy.org/https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
       sha256: ''
-      size: 401 MB
-      sizeBytes: 123026414
+      size: 385.9 MB
+      sizeBytes: 404661292
   recipes:
   - id: full
     name: 全量

@@ -1,7 +1,7 @@
 id: rime-kagiroi
-name: Kagiroi日语输入
+name: Kagiroi日语方案
 author: pfeiwu
-description: 基于Rime实现的日语输入方案
+description: Rimeフレームワークの日本語入力設定
 type: remote
 tags:
 - 日语
@@ -11,7 +11,7 @@ appVersion: '>=2.4.0'
 currentVersion: master
 versions:
 - version: master
-  date: '2026-10-02'
+  date: '2026-5-15'
   changelog: ''
   downloadUrl:
   - url: https://github.com/rimeinn/rime-kagiroi/archive/refs/heads/main.zip
@@ -26,9 +26,13 @@ recipes:
   - lua/kagiroi/*.lua
   - opencc/*
   - kagiroi*.yaml
+  - kagiroi.ico
   - default.yaml
+  - key_bindings.yaml
+  - punctuation.yaml
   - README.md
   - README-zh-hans.md
+  - LICENSE
 - id: schemas
   name: 仅方案
   files:
