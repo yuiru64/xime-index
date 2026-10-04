@@ -196,7 +196,7 @@ schemas:
   schemas:
   - kagiroi
 - id: rime-mungyeong
-  name: Mungyeong韩语输入方案
+  name: Mungyeong韩语方案
   author: pfeiwu
   description: 初步者를 為한 韓国語 入力機
   type: remote
@@ -232,6 +232,7 @@ schemas:
     - lua/mungyeong/*.lua
     - opencc/*
     - mungyeong*.yaml
+    - punctuation.yaml
   schemas:
   - mungyeong
 - id: rime-wanxiang

@@ -1,5 +1,5 @@
 id: rime-mungyeong
-name: Mungyeong韩语输入方案
+name: Mungyeong韩语方案
 author: pfeiwu
 description: 初步者를 為한 韓国語 入力機
 type: remote
@@ -37,4 +37,5 @@ recipes:
   - lua/mungyeong/*.lua
   - opencc/*
   - mungyeong*.yaml
+  - punctuation.yaml
 
