@@ -307,6 +307,65 @@ schemas:
       sha256: 8f4cf584708e22db1c5888c4ed14cf28f90e465939fd4991904c179e76f1baf0
       size: 49.3 KB
       sizeBytes: 50474
+- id: wanxiang-kaomoji
+  name: 万象颜文字扩展
+  author: WuLaNaLashi
+  description: '为万象拼音方案添加颜文字输入功能
+
+
+    功能特性：
+
+    - 输入 /kk 触发颜文字模式
+
+    - 支持分类浏览（/kk.happy, /kk.sad 等）
+
+    - 支持模糊搜索（/kk?kaixin）
+
+    - 输入中文词时自动推荐相关颜文字
+
+
+    安装说明：
+
+    - 需要先安装万象拼音方案
+
+    - 安装后需要重新部署 RIME
+
+    '
+  tags:
+  - 颜文字
+  - 万象
+  dependencies:
+  - wanxiang
+  currentVersion: master
+  versions:
+  - version: master
+    date: '2026-10-06'
+    changelog: '- 初始版本
+
+      - 支持颜文字输入
+
+      - 支持分类和搜索
+
+      '
+    downloadUrl:
+    - url: https://gh-proxy.org/https://github.com/yuiru64/wxpy-Kaomoji/archive/refs/heads/main.zip
+      sha256: ''
+      size: 18 KB
+    - url: https://gh-proxy.org/https://github.com/yuiru64/rime-scripts/raw/refs/heads/main/wxpy-Kaomoji/install.js
+      sha256: ''
+      size: 11 KB
+    - url: https://gh-proxy.org/https://github.com/yuiru64/rime-scripts/raw/refs/heads/main/wxpy-Kaomoji/uninstall.js
+      sha256: ''
+      size: 8 KB
+  recipes:
+  - id: full
+    name: 全量
+    files:
+    - lua/data/kaomoji.txt
+    - lua/data/kaomoji_replacer.txt
+    script: install.js
+    uninstallScript: uninstall.js
+    scriptParams: []
 - id: wubi98
   name: 五笔98
   author: rime
