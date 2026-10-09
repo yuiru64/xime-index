@@ -1,7 +1,7 @@
 id: stroke
 name: 笔画
 author: rime
-description: 适配笔画输入法布局,⚠️注意： 这只是一个示例demo，并不具备实用性！
+description: 适配笔画输入法布局,基本能够满足日常使用。
 type: remote
 tags:
 - 笔画
@@ -9,13 +9,21 @@ homepage: https://github.com/ximeiorg/rime-stroke
 dependencies:
 - luna_pinyin
 appVersion: '>=2.5.0'
-currentVersion: 0.1.0
+currentVersion: 0.2.0
 versions:
+- version: 0.2.0
+  date: '2026-10-05'
+  changelog: '优化了词库的格式以及词条，并支持输入部分笔画连打'
+  downloadUrl:
+  - url: https://github.com/ximeiorg/rime-stroke/releases/download/0.2.0/rime-stroke-0.2.0.zip
+    sha256: 914c3b8ba1e765f1fe9fe869b424006d9c83e4fa4f9b55a9fdc94623b4f23943
+    size: 2.84 MB
+    sizeBytes: 284000
 - version: 0.1.0
   date: '2026-06-21'
   changelog: ''
   downloadUrl:
-  - url: https://github.com/ximeiorg/rime-stroke/archive/refs/tags/0.1.0.tar.gz
+  - url: https://github.com/ximeiorg/rime-stroke/releases/download/0.1.0/rime-stroke-0.1.0.zip
     sha256: 8f4cf584708e22db1c5888c4ed14cf28f90e465939fd4991904c179e76f1baf0
     size: 49.3 KB
     sizeBytes: 50474

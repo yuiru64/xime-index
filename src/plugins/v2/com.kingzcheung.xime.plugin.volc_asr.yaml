@@ -22,8 +22,16 @@ network:
 homepage: https://github.com/ximeiorg/Xime
 license: GPL-3.0
 appVersion: '>=3.0.0'
-currentVersion: 3.0.0
+currentVersion: 3.0.1
 versions:
+- version: 3.0.1
+  date: '2026-10-04'
+  changelog:  fix(asr)：修复ASR插件在连接建立期间的音频发送顺序问题
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta9/volc-asr-3.0.1.xipk
+    size: 8.8 KB
+    sha256: 59f4fc12b001bf31a731b160f707b4ad9183c6dfc0256af69b43f16492f444d9
+    sizeBytes: 9043
 - version: 3.0.0
   date: '2026-09-24'
   changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+

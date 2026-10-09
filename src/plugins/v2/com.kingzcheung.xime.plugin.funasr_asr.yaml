@@ -22,8 +22,16 @@ network:
 homepage: https://github.com/ximeiorg/Xime
 license: GPL-3.0
 appVersion: '>=3.0.0'
-currentVersion: 3.1.0
+currentVersion: 3.1.1
 versions:
+- version: 3.1.1
+  date: '2026-10-04'
+  changelog: 1. fix(asr)：修复ASR插件在连接建立期间的音频发送顺序问题
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.0.0-beta9/funasr-asr-3.1.1.xipk
+    size: 9.6 KB
+    sha256: fd2fbf921489504b9d37724f6cd7a8d6f3dd955cf0dccf5eff987be40d99b43c
+    sizeBytes: 9499
 - version: 3.1.0
   date: '2026-09-29'
   changelog: 1. 优化语音输入在发送场景下的文本处理
