@@ -1,0 +1,22 @@
+id: xime_index_net
+name: 扩展商店资源加速
+author: tiengming
+description: 提供 CDN 加速下载 Xime 扩展商店资源，优化扩展安装体验。
+tags:
+  - 资源加速
+  - xime_index
+repo: https://github.com/tiengming/xime_flypy_proxy
+license: GPL-3.0
+appVersion: ">=2.5.0"
+requiresSchemes: []
+screenshots:
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_index_net-v1.0.1/images/img1.jpg
+currentVersion: "1.0.1"
+versions:
+  - version: "1.0.1"
+    date: "2026-10-11"
+    changelog: 优化截图体积，单文件交付。
+    downloadUrl:
+      - url: https://github.com/tiengming/xime_flypy_proxy/releases/download/xime_index_net-v1.0.1/xime.custom.yaml
+        sha256: "5d5b766d4223c868c2f52d7a63b40f6115f80136dce45c48ac6f7ab8fb859e81"
+        size: "351 B"

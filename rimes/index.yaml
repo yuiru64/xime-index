@@ -1,7 +1,7 @@
 # Xime 输入方案子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-10-05'
+updated_at: '2026-10-11'
 schemas:
 - id: builtin
   name: 默认方案
@@ -257,8 +257,8 @@ schemas:
       sizeBytes: 35263880
     - url: https://gh-proxy.org/https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
       sha256: ''
-      size: 385.9 MB
-      sizeBytes: 404661292
+      size: 379.9 MB
+      sizeBytes: 398333996
   recipes:
   - id: full
     name: 全量
@@ -307,14 +307,6 @@ schemas:
       sha256: 914c3b8ba1e765f1fe9fe869b424006d9c83e4fa4f9b55a9fdc94623b4f23943
       size: 2.84 MB
       sizeBytes: 284000
-  - version: 0.1.0
-    date: '2026-06-21'
-    changelog: ''
-    downloadUrl:
-    - url: https://gh-proxy.org/https://github.com/ximeiorg/rime-stroke/releases/download/0.1.0/rime-stroke-0.1.0.zip
-      sha256: 8f4cf584708e22db1c5888c4ed14cf28f90e465939fd4991904c179e76f1baf0
-      size: 49.3 KB
-      sizeBytes: 50474
 - id: wanxiang-kaomoji
   name: 万象颜文字扩展
   author: WuLaNaLashi

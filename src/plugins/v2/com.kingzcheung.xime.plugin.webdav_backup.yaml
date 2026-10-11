@@ -21,9 +21,17 @@ network:
   allowCustomHosts: true
 homepage: https://github.com/ximeiorg/Xime
 license: GPL-3.0
-appVersion: '>=3.0.0'
-currentVersion: 2.0.0
+appVersion: '>=3.1.0'
+currentVersion: 3.0.0
 versions:
+- version: 3.0.0
+  date: '2026-10-10'
+  changelog: 修复上传大文件时OOM的问题
+  downloadUrl:
+  - url: https://github.com/ximeiorg/Xime/releases/download/v3.1.0/webdav-backup-3.0.0.xipk
+    size: 3.7 KB
+    sha256: 890e0070300be81ddae897fd3952985f8fb26ec9409099ad751419766e7ae956
+    sizeBytes: 3780
 - version: 2.0.0
   date: '2026-09-24'
   changelog: v3 重构：TypeScript/QuickJS 插件，需宿主 v3.0.0+

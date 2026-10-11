@@ -1,7 +1,7 @@
 # Xime 键盘布局子索引
 # ⚠️ 此文件由 scripts/ci-update.py 自动生成，请勿手动编辑
 index_version: 1
-updated_at: '2026-10-05'
+updated_at: '2026-10-11'
 layouts:
 - id: flypy
   name: 小鹤双拼带韵母
@@ -126,3 +126,55 @@ layouts:
       size: 10.4 KB
       sha256: 30684dc7767d5a654031f3c38dfb7b3973a70140e2fd1012468c59b18dbe10a9
       sizeBytes: 10685
+- id: xime_flypy_proxy
+  name: 小鹤双拼多功能配置
+  author: tiengming
+  description: 专为小鹤双拼优化的键盘布局，支持加速下载扩展商店资源，提供中英文 26 键，下滑显示韵母/声母提示，上滑显示常用中文标点与符号，内置多款精美主题，适配
+    Xime 3.0。
+  tags:
+  - 加速商店资源
+  - 全功能键盘
+  - 多主题
+  repo: https://github.com/tiengming/xime_flypy_proxy
+  license: GPL-3.0
+  appVersion: '>=3.0.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_flypy_proxy-v1.0.1/images/img1.jpg
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_flypy_proxy-v1.0.1/images/img2.jpg
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_flypy_proxy-v1.0.1/images/img3.jpg
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_flypy_proxy-v1.0.1/images/img4.jpg
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_flypy_proxy-v1.0.1/images/img5.jpg
+  currentVersion: 1.0.1
+  versions:
+  - version: 1.0.1
+    date: '2026-10-11'
+    changelog: 优化截图体积，单文件交付。
+    downloadUrl:
+    - url: https://gh-proxy.org/https://github.com/tiengming/xime_flypy_proxy/releases/download/xime_flypy_proxy-v1.0.1/xime.custom.yaml
+      sha256: 24aa932b792ef0fc6d2f8e61daf1d8b7b736ffa563d6038cbc41a61b8d991b0f
+      size: 16.6 KB
+      sizeBytes: 17045
+- id: xime_index_net
+  name: 扩展商店资源加速
+  author: tiengming
+  description: 提供 CDN 加速下载 Xime 扩展商店资源，优化扩展安装体验。
+  tags:
+  - 资源加速
+  - xime_index
+  repo: https://github.com/tiengming/xime_flypy_proxy
+  license: GPL-3.0
+  appVersion: '>=2.5.0'
+  requiresSchemes: []
+  screenshots:
+  - https://cdn.jsdelivr.net/gh/tiengming/xime_flypy_proxy@xime_index_net-v1.0.1/images/img1.jpg
+  currentVersion: 1.0.1
+  versions:
+  - version: 1.0.1
+    date: '2026-10-11'
+    changelog: 优化截图体积，单文件交付。
+    downloadUrl:
+    - url: https://gh-proxy.org/https://github.com/tiengming/xime_flypy_proxy/releases/download/xime_index_net-v1.0.1/xime.custom.yaml
+      sha256: 5d5b766d4223c868c2f52d7a63b40f6115f80136dce45c48ac6f7ab8fb859e81
+      size: 351 B
+      sizeBytes: 351
