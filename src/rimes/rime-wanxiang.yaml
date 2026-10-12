@@ -37,6 +37,7 @@ recipes:
   - wanxiang*.*yaml
   - README.md
   - custom_phrase.dict.yaml
+  - wanxiang-lts-zh-hans.gram
 - id: schemas
   name: 仅方案
   files:
@@ -49,4 +50,5 @@ recipes:
   - opencc/wanxiang/*.*
   - wanxiang*.*yaml
   - custom_phrase.dict.yaml
+  - wanxiang-lts-zh-hans.gram
 
